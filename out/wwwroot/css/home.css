@@ -1,0 +1,136 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #0B001A;
+    display: flex;
+    justify-content: center;
+    /* viewport seguro em mobile */
+    min-height: 100svh;
+    height: 100dvh;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+.content {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    padding: var(--gap);
+    box-sizing: border-box;
+}
+
+.content-holder {
+    display: flex;
+    align-items: center;
+}
+
+.software-square {
+    background-color: #370085;
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: white;
+    box-shadow: 0 0 20px rgba(111, 0, 255, 0.7);
+    margin: 50px;
+    width: 900px;
+    height: 750px;
+}
+
+.hardware-square {
+    background-color: #370085;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 0 0 40px rgba(111, 0, 255, 0.7);
+    margin: 50px;
+    width: 500px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* PARTE DE CIMA (30%) */
+.hardware-top {
+    background-color: #362E50;
+    border: 2px solid #362E50;
+    /*background-color: #464646;*/
+    height: 30%;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex; /* centraliza o vídeo */
+    justify-content: center;
+    align-items: center;
+}
+
+    .hardware-top video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* evita corte */
+        border-radius: 10px;
+    }
+    .hardware-top:hover {
+        border: 2px solid white;
+        background-color: #362E50;
+        box-shadow: inset 0 0 15px 15px rgba(76, 65, 112, 0.25); /* sombra interna clara */
+    }
+/* PARTE DE BAIXO (70%) */
+.hardware-bottom {
+    background-color: #362E50;
+    height: 70%;
+    width: 100%;
+    border-radius: 10px;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+/* COLUNA DE ETIQUETAS */
+.labels-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 65%; /* controla quanto espaço têm as etiquetas */
+}
+
+/* ETIQUETA BASE */
+.label {
+    width: 120px;
+    background-color: white;
+    color: #370085;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    width: 120px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s ease;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+}
+
+    /* AO PASSAR O RATO (EXPANDE) */
+    .label:hover {
+        width: 70%;
+        background-color: #d4c1ff;
+    }
+
+    /* TEXTO SECUNDÁRIO */
+    .label span {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-weight: normal;
+    }
+
+    /* Mostra o texto quando hover */
+    .label:hover span {
+        opacity: 1;
+    }
