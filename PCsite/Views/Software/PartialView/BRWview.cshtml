@@ -1,0 +1,48 @@
+﻿<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div class="obj">
+    <div class="image-box">
+        <div class="image">
+            <img src="~/images/browser.png">
+        </div>
+    </div>
+
+    <div class="description">
+        <h3>BRW (Web Browser) 🌐</h3>
+        <p><strong>What it is:</strong> A web browser is a software application that retrieves, presents, and traverses information on the World Wide Web. Popular examples include Google Chrome, Firefox, Safari, and Edge.</p>
+        <p><strong>What it’s for:</strong> It allows users to access websites, view multimedia content, submit forms, download files, and run web-based applications by interpreting HTML, CSS, and JavaScript. Browsers also manage user data like bookmarks, passwords, and history.</p>
+    </div>
+</div>
+
+<style>
+    .obj {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column; /* imagem em cima, texto em baixo */
+        align-items: center; /* centra a imagem */
+        width: 100%;
+        color: white;
+    }
+
+    /* Imagem centrada */
+    .image-box img {
+        width: 400px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        background-color: white;
+        padding: 35px;
+    }
+
+    /* Texto mais largo */
+    .description {
+        max-width: 800px; /* impede que fique muito fino */
+        width: 90%; /* adapta ao ecrã */
+        /* font-family: sans-serif;  REMOVIDO para manter Roboto */
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: left;
+        color: white; /* garante que o texto fique branco */
+    }
+</style>

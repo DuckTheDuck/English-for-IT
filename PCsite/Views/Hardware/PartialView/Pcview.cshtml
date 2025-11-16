@@ -1,0 +1,57 @@
+﻿<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div class="obj">
+    <div class="image-box">
+        <div class="image">
+            <img src="~/images/pc.png">
+        </div>
+    </div>
+
+    <div class="description">
+        <h3>What are computers?</h3>
+        <p><strong>What they are:</strong> Computers are electronic machines that receive, process, and store information.</p>
+        <p><strong>What they’re for:</strong> They help people perform many tasks, such as writing, calculating, communicating, and accessing the internet.</p>
+
+        <h3>How do they work?</h3>
+        <p><strong>How they work:</strong> Computers work by following instructions called programs. These instructions tell the computer what actions to perform.</p>
+        <p><strong>Process:</strong> The computer receives input, processes the data using its hardware and software, and produces an output.</p>
+
+        <h3>What is the most important part?</h3>
+        <p><strong>The most important part:</strong> The CPU (Central Processing Unit) acts like the “brain” of the computer.</p>
+        <p><strong>What it does:</strong> It is responsible for processing information and running programs.</p>
+    </div>
+</div>
+
+<style>
+    .obj {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column; /* imagem em cima, texto em baixo */
+        align-items: center; /* centra a imagem */
+        width: 100%;
+        color: white;
+    }
+
+    /* Imagem centrada */
+    .image-box img {
+        width: 400px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        padding: 35px;
+        border-radius: 10px;
+        background-color: #3A3159;
+    }
+
+    /* Texto mais largo */
+    .description {
+        max-width: 800px; /* impede que fique muito fino */
+        width: 90%; /* adapta ao ecrã */
+        /* font-family: sans-serif;  REMOVIDO para manter Roboto */
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: left;
+        color: white; /* garante que o texto fique branco */
+    }
+</style>

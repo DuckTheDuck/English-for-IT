@@ -1,0 +1,49 @@
+﻿<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div class="obj">
+    <div class="image-box">
+        <div class="image">
+            <img src="~/images/Terminal.png">
+        </div>
+    </div>
+
+    <div class="description">
+        <h3>TERM (Terminal) 🖥️</h3>
+        <p><strong>What it is:</strong> A terminal (or command line interface) is a text-based interface that allows users to interact with the operating system by typing commands. Examples include Command Prompt, PowerShell, and Bash.</p>
+        <p><strong>What it’s for:</strong> It provides powerful control over the system for tasks like file management, software installation, scripting, and automation, often used by developers and system administrators.</p>
+    </div>
+</div>
+
+<style>
+    .obj {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column; /* imagem em cima, texto em baixo */
+        align-items: center; /* centra a imagem */
+        width: 100%;
+        color: white;
+    }
+
+    /* Imagem centrada */
+    .image-box img {
+        width: 400px;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        background-color: white;
+        padding: 35px;
+    }
+
+    /* Texto mais largo */
+    .description {
+        max-width: 800px; /* impede que fique muito fino */
+        width: 90%; /* adapta ao ecrã */
+        /* font-family: sans-serif;  REMOVIDO para manter Roboto */
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: left;
+        color: white; /* garante que o texto fique branco */
+    }
+</style>

@@ -1,0 +1,49 @@
+﻿<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div class="obj">
+    <div class="image-box">
+        <div class="image">
+            <img src="~/images/password.png">
+        </div>
+    </div>
+
+    <div class="description">
+        <h3>PASS (Password) 🔐</h3>
+        <p><strong>What it is:</strong> A password is a secret string of characters used to authenticate and verify a user’s identity when accessing a system or account.</p>
+        <p><strong>What it’s for:</strong> It secures user accounts and sensitive data by restricting access only to authorized individuals. Strong passwords prevent unauthorized entry and protect against hacking, identity theft, and data breaches.</p>
+    </div>
+</div>
+
+<style>
+    .obj {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column; /* imagem em cima, texto em baixo */
+        align-items: center; /* centra a imagem */
+        width: 100%;
+        color: white;
+    }
+
+    /* Imagem centrada */
+    .image-box img {
+        width: 400px;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        background-color: white;
+        padding: 35px;
+    }
+
+    /* Texto mais largo */
+    .description {
+        max-width: 800px; /* impede que fique muito fino */
+        width: 90%; /* adapta ao ecrã */
+        /* font-family: sans-serif;  REMOVIDO para manter Roboto */
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: left;
+        color: white; /* garante que o texto fique branco */
+    }
+</style>

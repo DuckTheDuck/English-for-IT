@@ -1,0 +1,48 @@
+﻿<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div class="obj">
+    <div class="image-box">
+        <div class="image">
+            <img src="~/images/So.png">
+        </div>
+    </div>
+
+    <div class="description">
+        <h3>OS (Operating System) 💻</h3>
+        <p><strong>What it is:</strong> The Operating System is the core software that acts as an intermediary between the computer hardware and the user’s applications. Examples include Windows, macOS, and Linux.</p>
+        <p><strong>What it’s for:</strong> It manages all hardware components (CPU, memory, storage, input/output devices) and provides essential services to applications, like file management, task scheduling, and resource allocation. It also offers a user interface (graphical or command line) so users can interact with the system easily.</p>
+    </div>
+</div>
+
+<style>
+    .obj {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column; /* imagem em cima, texto em baixo */
+        align-items: center; /* centra a imagem */
+        width: 100%;
+        color: white;
+    }
+
+    /* Imagem centrada */
+    .image-box img {
+        width: 400px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        background-color: white;
+        padding: 35px;
+    }
+
+    /* Texto mais largo */
+    .description {
+        max-width: 800px; /* impede que fique muito fino */
+        width: 90%; /* adapta ao ecrã */
+        /* font-family: sans-serif;  REMOVIDO para manter Roboto */
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: left;
+        color: white; /* garante que o texto fique branco */
+    }
+</style>

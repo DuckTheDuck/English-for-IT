@@ -1,0 +1,48 @@
+﻿<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div class="obj">
+    <div class="image-box">
+        <div class="image">
+            <img src="~/images/cloud.png">
+        </div>
+    </div>
+
+    <div class="description">
+        <h3>CLOUD (Cloud Storage) ☁️</h3>
+        <p><strong>What it is:</strong> Cloud storage refers to storing data on remote servers accessed over the internet, rather than locally on your device. Examples include Google Drive, Dropbox, and OneDrive.</p>
+        <p><strong>What it’s for:</strong> It provides scalable, accessible, and secure file storage and backup solutions. Users can save files online, share them across devices, collaborate in real-time, and protect data from local hardware failures.</p>
+    </div>
+</div>
+
+<style>
+    .obj {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column; /* imagem em cima, texto em baixo */
+        align-items: center; /* centra a imagem */
+        width: 100%;
+        color: white;
+    }
+
+    /* Imagem centrada */
+    .image-box img {
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        background-color: white;
+        padding: 35px;
+    }
+
+    /* Texto mais largo */
+    .description {
+        max-width: 800px; /* impede que fique muito fino */
+        width: 90%; /* adapta ao ecrã */
+        /* font-family: sans-serif;  REMOVIDO para manter Roboto */
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: left;
+        color: white; /* garante que o texto fique branco */
+    }
+</style>

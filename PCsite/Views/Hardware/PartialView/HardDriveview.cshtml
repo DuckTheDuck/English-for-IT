@@ -1,0 +1,62 @@
+﻿<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div class="obj">
+    <div class="image-box">
+        <div class="image">
+            <img src="~/images/ssdhdd.png">
+        </div>
+    </div>
+
+    <div class="description">
+        <h3>SSD & HDD (Storage Devices) ⚡💽</h3>
+
+        <p>
+            <strong>What they are:</strong>
+            SSD (Solid State Drive) is a storage device that uses flash memory chips with no moving parts, making it extremely fast and durable.
+            HDD (Hard Disk Drive) is a mechanical storage device that uses spinning disks and a magnetic head to read and write data, offering larger capacities at lower cost.
+        </p>
+
+        <p>
+            <strong>What they’re for:</strong>
+            SSDs are used for fast system performance, quick boot times, rapid application loading, and smooth overall responsiveness.
+            HDDs are used for storing large amounts of data cost-effectively, such as backups, videos, photos, and files that don’t require high-speed access.
+        </p>
+
+        <p>
+            <strong>Comparison:</strong>
+            SSDs are much faster, quieter, and more durable, but more expensive per gigabyte. HDDs are slower but offer higher storage capacities for a lower price. SSD is ideal for performance; HDD is ideal for mass storage.
+        </p>
+    </div>
+</div>
+
+<style>
+    .obj {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column; /* imagem em cima, texto em baixo */
+        align-items: center; /* centra a imagem */
+        width: 100%;
+        color: white;
+    }
+
+    /* Imagem centrada */
+    .image-box img {
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        padding: 35px;
+    }
+
+    /* Texto mais largo */
+    .description {
+        max-width: 800px; /* impede que fique muito fino */
+        width: 90%; /* adapta ao ecrã */
+        /* font-family: sans-serif;  REMOVIDO para manter Roboto */
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: left;
+        color: white; /* garante que o texto fique branco */
+    }
+</style>

@@ -1,0 +1,41 @@
+.hardware{
+    display: flex;
+    justify-content: center;
+}
+.hardware-container {
+    display: flex;
+    max-height: 900px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgb(0 0 0 / 0.1);
+}
+
+#sidebar {
+    width: 500px;
+    background: #1f2937;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgb(0 0 0 / 0.1);
+    /* Mantém a barra fixa na tela */
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+#content {
+    flex: 1;
+    padding: 30px;
+    background: #370085;
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: white;
+    border-radius: 0 8px 8px 0;
+    height: fit-content;
+    height: 800px;
+    width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(111, 0, 255, 0.7);
+}

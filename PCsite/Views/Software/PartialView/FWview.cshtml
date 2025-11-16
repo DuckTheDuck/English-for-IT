@@ -1,0 +1,48 @@
+﻿<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div class="obj">
+    <div class="image-box">
+        <div class="image">
+            <img src="~/images/firewall.png">
+        </div>
+    </div>
+
+    <div class="description">
+        <h3>FW (Firewall) 🚧</h3>
+        <p><strong>What it is:</strong> A firewall is a network security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules.</p>
+        <p><strong>What it’s for:</strong> It acts as a barrier between a trusted internal network and untrusted external networks (like the internet), blocking unauthorized access attempts while allowing legitimate communication. Firewalls help prevent hacking, malware spread, and data leaks.</p>
+    </div>
+</div>
+
+<style>
+    .obj {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column; /* imagem em cima, texto em baixo */
+        align-items: center; /* centra a imagem */
+        width: 100%;
+        color: white;
+    }
+
+    /* Imagem centrada */
+    .image-box img {
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        background-color: white;
+        padding: 35px;
+    }
+
+    /* Texto mais largo */
+    .description {
+        max-width: 800px; /* impede que fique muito fino */
+        width: 90%; /* adapta ao ecrã */
+        /* font-family: sans-serif;  REMOVIDO para manter Roboto */
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: left;
+        color: white; /* garante que o texto fique branco */
+    }
+</style>

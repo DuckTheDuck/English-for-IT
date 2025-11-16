@@ -1,0 +1,235 @@
+﻿@model string
+<ul class="component-list">
+    <li>
+        <button id="Pc" onclick="loadPartial('Pc')" class="component-btn-special component-btn">
+            <div class="btn-label">
+                <span class="btn-main">Pc</span>
+                <span class="btn-desc">Computer</span>
+            </div>
+            <div class="btn-icon">🖥️</div>
+        </button>
+    </li>
+    <li>
+        <div class="lable">Components</div>
+    </li>
+    <li>
+        <button id="CPU" onclick="loadPartial('CPU')" class="component-btn">
+            <div class="btn-label">
+                <span class="btn-main">CPU</span>
+                <span class="btn-desc">Processor</span>
+            </div>
+            <div class="btn-icon">🔲</div>
+        </button>
+    </li>
+    <li>
+        <button id="GPU" onclick="loadPartial('GPU')" class="component-btn">
+            <div class="btn-label">
+                <span class="btn-main">GPU</span>
+                <span class="btn-desc">Graphics card</span>
+            </div>
+            <div class="btn-icon">🎮</div>
+        </button>
+    </li>
+    <li>
+        <button id="PSU" onclick="loadPartial('PSU')" class="component-btn">
+            <div class="btn-label">
+                <span class="btn-main">PSU</span>
+                <span class="btn-desc">Power supply</span>
+            </div>
+            <div class="btn-icon">⚡</div>
+        </button>
+    </li>
+    <li>
+        <button id="Ram" onclick="loadPartial('Ram')" class="component-btn">
+            <div class="btn-label">
+                <span class="btn-main">RAM</span>
+                <span class="btn-desc">volatile memory</span>
+            </div>
+            <div class="btn-icon">💾</div>
+        </button>
+    </li>
+    <li>
+        <button id="Motherboard" onclick="loadPartial('Motherboard')" class="component-btn">
+            <div class="btn-label">
+                <span class="btn-main">MB</span>
+                <span class="btn-desc">Motherboard</span>
+            </div>
+            <div class="btn-icon">🔧</div>
+        </button>
+    </li>
+    <li>
+        <button id="HardDrive" onclick="loadPartial('HardDrive')" class="component-btn">
+            <div class="btn-label">
+                <span class="btn-main">Storage</span>
+                <span class="btn-desc">Hard Drive & soft Drive</span>
+            </div>
+            <div class="btn-icon">💽</div>
+        </button>
+    </li>
+    <li>
+        <button id="Case" onclick="loadPartial('Case')" class="component-btn">
+            <div class="btn-label">
+                <span class="btn-main">Case</span>
+                <span class="btn-desc">Computer case</span>
+            </div>
+            <div class="btn-icon">🖥️</div>
+        </button>
+    </li>
+</ul>
+
+<script>
+    //setActiveMenu("@Model");
+</script>
+
+
+<style>
+    .lable{
+        font-weight: 700;
+        font-size: 1.7rem;
+        color: white;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    .component-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .component-btn-special {
+        width: 90px;
+        background: #4B00B5 !important;;
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 14px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        /*flex-direction: row-reverse;*/
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+        border: 1px solid;
+        border-color: white;
+        white-space: nowrap;
+        height: 55px;
+    }
+    .component-btn {
+        width: 90px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 14px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        /*flex-direction: row-reverse;*/
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+        border: 1px solid;
+        border-color: white;
+        white-space: nowrap;
+        height: 55px;
+    }
+
+        .component-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .component-btn:hover::before {
+            left: 100%;
+        }
+
+        .component-btn:hover {
+            width: 100%;
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .component-btn:active {
+            transform: translateX(8px) scale(0.98);
+        }
+
+        .component-btn.active {
+            width: 100%;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+    .btn-label {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+        flex: 1;
+    }
+
+    .btn-main {
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-desc {
+        font-size: 0.8rem;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        font-weight: 400;
+        transition: all 0.3s ease;
+    }
+
+    .component-btn:hover .btn-desc,
+    .component-btn.active .btn-desc {
+        opacity: 0.85;
+        max-height: 50px;
+    }
+
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        transition: all 0.3s;
+        backdrop-filter: blur(10px);
+    }
+
+    .component-btn:hover .btn-icon,
+    .component-btn.active .btn-icon {
+        display: flex;
+    }
+
+    .component-btn:hover .btn-icon {
+        background: rgba(255, 255, 255, 0.25);
+        transform: rotate(360deg);
+    }
+</style>

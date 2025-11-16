@@ -1,0 +1,400 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    var softwareItems = new List<(string Id, string Name, string Desc, string Icon)>
+    {
+        ("OS", "Operating System", "System Core", "💻"),
+        ("BRW", "Web Browser", "Internet Access", "🌐"),
+        ("TX", "Text Editor", "Editing Tools", "📝"),
+        ("DB", "Database", "Data Storage", "🗄️"),
+        ("PASS", "Password Manager", "Secure Credential Storage", "🔐"),
+        ("AV", "Antivirus", "System Protection", "🛡️"),
+        ("FW", "Firewall", "Security Rules", "🚧"),
+        ("CLOUD", "Cloud Storage", "File Backup", "☁️"),
+        ("PKG", "Package Manager", "Software Install", "📦"),
+        ("TASK", "Task Manager", "System Monitor", "📊"),
+        ("TERM", "Terminal", "Command Tools", "🖥️"),
+        ("VM", "Virtual Machine", "Emulation Software", "📀"),
+        ("VPN", "VPN", "Private Internet Network", "🔒"),
+                ("ARCH", "Archiver", "File Compression", "🗜️"),
+        ("CFG", "Settings", "System Config", "⚙️")
+    };
+}
+
+<link rel="stylesheet" href="~/css/" asp-append-version="true" />
+<script src="~/js/home.js"></script>
+
+<div class="content">
+    <div class="content-holder">
+        <div class="software-square"> 
+            <div class="software-top" style="color: white; font-size: 48px;">
+                IT terms Options
+            </div>
+            <div class="software-bottom">
+                @{
+                    for (int i = 0; i < 3; i++){
+                        <ul class="component-list">
+                        @for (int a = 0; a < 5; a++)
+                        {
+                            <li>
+                                    <button id="" onclick="window.location.href='/Software/Index?view=@softwareItems[(a + (i * 5))].Id'" class="software-btn">
+                                    <div class="btn-label">
+                                            <span class="btn-main">@softwareItems[(a + (i * 5))].Name</span>
+                                            <span class="btn-desc">@softwareItems[(a + (i * 5))].Desc</span>
+                                    </div>
+                                        <div class="btn-icon">@softwareItems[(a + (i * 5))].Icon</div>
+                                </button>
+                            </li>
+                        }
+                        </ul>
+                    }
+
+                }
+            </div>
+        </div>
+
+        <div class="hardware-square">
+            <div class="hardware-top">
+                <div class="video-box" onclick="window.location.href='/Hardware/Index?view=Pc'">
+                    <video id="myVideo" loop muted autoplay playsinline disablepictureinpicture
+                           style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+                        <source src="~/videos/lightpurplegoodvid.mp4" type="video/mp4" />
+                        Seu navegador não suporta o vídeo.
+                    </video>
+                </div>
+            </div>
+            <div class="hardware-bottom">
+                <div class="labels-right">
+                    <ul class="component-list">
+                        <li>
+                            <button onclick="window.location.href='/Hardware/Index?view=CPU'" class="component-btn">
+                                <div class="btn-label">
+                                    <span class="btn-main">CPU</span>
+                                    <span class="btn-desc">Processor</span>
+                                </div>
+                                <div class="btn-icon">🔲</div>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="window.location.href='/Hardware/Index?view=GPU'" class="component-btn">
+                                <div class="btn-label">
+                                    <span class="btn-main">GPU</span>
+                                    <span class="btn-desc">Graphics card</span>
+                                </div>
+                                <div class="btn-icon">🎮</div>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="window.location.href='/Hardware/Index?view=PSU'" class="component-btn">
+                                <div class="btn-label">
+                                    <span class="btn-main">PSU</span>
+                                    <span class="btn-desc">Power supply</span>
+                                </div>
+                                <div class="btn-icon">⚡</div>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="window.location.href='/Hardware/Index?view=Ram'" class="component-btn">
+                                <div class="btn-label">
+                                    <span class="btn-main">RAM</span>
+                                    <span class="btn-desc">volatile memory</span>
+                                </div>
+                                <div class="btn-icon">💾</div>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="window.location.href='/Hardware/Index?view=Motherboard'" class="component-btn">
+                                <div class="btn-label">
+                                    <span class="btn-main">MB</span>
+                                    <span class="btn-desc">Motherboard</span>
+                                </div>
+                                <div class="btn-icon">🔧</div>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="window.location.href='/Hardware/Index?view=HardDrive'" class="component-btn">
+                                <div class="btn-label">
+                                    <span class="btn-main">Storage</span>
+                                    <span class="btn-desc">Hard Drive & soft Drive</span>
+                                </div>
+                                <div class="btn-icon">💽</div>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="window.location.href='/Hardware/Index?view=Case'" class="component-btn">
+                                <div class="btn-label">
+                                    <span class="btn-main">Case</span>
+                                    <span class="btn-desc">Computer case</span>
+                                </div>
+                                <div class="btn-icon">🖥️</div>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<script>
+    const video = document.getElementById('myVideo');
+    const hardwareTop = document.querySelector('.hardware-top');
+
+    hardwareTop.addEventListener('mouseenter', () => {
+        video.pause();
+        video.currentTime = 0;
+    });
+
+    hardwareTop.addEventListener('mouseleave', () => {
+        video.play();
+    });
+</script>
+
+<style>
+    .software-top{
+        background-color: #362E50;
+        /*background-color: #464646;*/
+        height: 30%;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex; /* centraliza o vídeo */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .software-bottom{
+        display: flex;
+        flex-direction: row;
+        background-color: #362E50;
+        height: 70%;
+        width: 100%;
+        border-radius: 10px;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-top: 10px;
+    }
+
+    .software-square {
+        background-color: #370085;
+        border-radius: 10px;
+        border: 2px solid white;
+        box-shadow: 0 0 40px rgba(111, 0, 255, 0.7);
+        margin: 50px;
+        width: 900px;
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .video-box:hover{
+        cursor: pointer;
+    }
+
+    .component-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .component-btn {
+        width: 90px;
+        background: #4B00B5;
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 14px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        /*flex-direction: row-reverse;*/
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+        border: 1px solid;
+        border-color: white;
+        white-space: nowrap;
+        height: 55px;
+        margin-right: 30px;
+    }
+
+        .component-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .component-btn:hover::before {
+            left: 100%;
+        }
+
+        .component-btn:hover {
+            width: 45%;
+            transform: translateX(15px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .component-btn:active {
+            transform: translateX(8px) scale(0.98);
+        }
+
+        .component-btn.active {
+            width: 100%;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+    .btn-label {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+        flex: 1;
+    }
+
+    .btn-main {
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-desc {
+        font-size: 0.8rem;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        font-weight: 400;
+        transition: all 0.3s ease;
+    }
+
+    .component-btn:hover .btn-desc,
+    .component-btn.active .btn-desc {
+        opacity: 0.85;
+        max-height: 50px;
+    }
+
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        transition: all 0.3s;
+        backdrop-filter: blur(10px);
+    }
+
+    .component-btn:hover .btn-icon,
+    .component-btn.active .btn-icon {
+        display: flex;
+    }
+
+    .component-btn:hover .btn-icon {
+        background: rgba(255, 255, 255, 0.25);
+        transform: rotate(360deg);
+    }
+
+    .component-list{
+        width: 500px;
+    }
+    .software-btn {
+        width: 250px;
+        background: #4B00B5;
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 14px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        /*flex-direction: row-reverse;*/
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+        border: 1px solid;
+        border-color: white;
+        white-space: nowrap;
+        height: 55px;
+    }
+
+
+        .software-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+
+        .software-btn:hover::before {
+            left: 100%;
+        }
+
+
+        .software-btn:hover {
+            width: 250px;
+            transform: translateX(15px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+
+        .software-btn:active {
+            transform: translateX(8px) scale(0.98);
+        }
+
+
+        .software-btn.active {
+            width: 100%;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+            .software-btn:hover .btn-desc,
+            .software-btn.active .btn-desc {
+                opacity: 0.85;
+                max-height: 50px;
+            }
+
+            .software-btn:hover .btn-icon,
+            .software-btn.active .btn-icon {
+                display: flex;
+            }
+
+
+        .software-btn:hover .btn-icon {
+            background: rgba(255, 255, 255, 0.25);
+            transform: rotate(360deg);
+        }
+</style>
+

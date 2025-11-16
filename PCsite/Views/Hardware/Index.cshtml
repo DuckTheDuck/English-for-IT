@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Hardware";
+    var partialName = ViewData["PartialName"] as string;
+}
+<link rel="stylesheet" href="~/css/Hardware.css" asp-append-version="true" />
+
+<div class="hardware">
+    <button class="back-button" onclick="window.location.href='/Home/Index?view=Index'">
+        <h2><</h2>
+    </button>
+    <div class="hardware-container">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            @await Html.PartialAsync("PartialView/Bar", partialName)
+        </div>
+
+        <!-- Conteúdo -->
+        <div id="content">
+            <h2>Bem-vindo à página de Hardware</h2>
+            <p>Escolhe um componente na barra lateral para ver detalhes.</p>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function loadPartial(partialName) {
+            $.get('/Hardware/' + partialName, function (data) {
+                $('#content').html(data);
+            });
+            setActiveMenu(partialName)
+        }
+        const defaultView = '@partialName';
+        if (defaultView) {
+            loadPartial(defaultView);
+        }
+        function setActiveMenu(id) {
+            const items = document.querySelectorAll(".component-btn");
+            items.forEach(item => {
+                item.classList.toggle("active", item.id === id);
+            });
+        }
+    </script>
+}
+
+<style>
+    .back-button {
+        width: 65px;
+        background: #4B00B5;
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 14px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        /*flex-direction: row-reverse;*/
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+        border: 1px solid;
+        white-space: nowrap;
+        height: 35px;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+
+    .back-button:hover {
+        background: #6A00FF;
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+</style>

@@ -1,0 +1,48 @@
+﻿<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div class="obj">
+    <div class="image-box">
+        <div class="image">
+            <img src="~/images/TaskManager.png">
+        </div>
+    </div>
+
+    <div class="description">
+        <h3>TASK (Task Manager) 📊</h3>
+        <p><strong>What it is:</strong> A task manager is a system utility that displays running processes, applications, and system resource usage such as CPU, memory, and network. Examples include Windows Task Manager and macOS Activity Monitor.</p>
+        <p><strong>What it’s for:</strong> It helps users monitor, manage, and terminate processes or applications that are not responding or consuming too many resources, ensuring system stability and performance.</p>
+    </div>
+</div>
+
+<style>
+    .obj {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column; /* imagem em cima, texto em baixo */
+        align-items: center; /* centra a imagem */
+        width: 100%;
+        color: white;
+    }
+
+    /* Imagem centrada */
+    .image-box img {
+        width: 400px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        background-color: white;
+        padding: 35px;
+    }
+
+    /* Texto mais largo */
+    .description {
+        max-width: 800px; /* impede que fique muito fino */
+        width: 90%; /* adapta ao ecrã */
+        /* font-family: sans-serif;  REMOVIDO para manter Roboto */
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: left;
+        color: white; /* garante que o texto fique branco */
+    }
+</style>
