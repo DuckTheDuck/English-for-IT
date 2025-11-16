@@ -21,7 +21,7 @@ WORKDIR /app
 COPY --from=build /app/PCsite/out ./
 
 # Expõe a porta padrão do ASP.NET Core
-EXPOSE 80
+EXPOSE 8080
 
 # Comando para iniciar a aplicação
 ENTRYPOINT ["dotnet", "PCsite.dll"]
